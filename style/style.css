@@ -1,0 +1,101 @@
+body {
+	background: #262626;
+	margin: 0;
+	padding: 0;
+	font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
+}
+
+#login_form {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+
+	background: #f0f0f0;
+	margin: 250px auto 0;
+	padding: 1em;
+	width: 300px;
+
+}
+#register_form {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+
+	background: #f0f0f0;
+	margin: 250px auto 0;
+	padding: 1em;
+	width: 350px;
+
+}
+h1,h2 {
+	margin-top: 0;
+	text-shadow: 0 1px 0 white;
+	-moz-text-shadow: 0 1px 0 white;
+	-webkit-text-shadow: 0 1px 0 white;
+}
+
+#login_form input[type='text'], #login_form input[type='password'],
+#register_form input[type='text'], #register_form input[type='password'] {
+	display: block;
+	margin: 0 0 1em 0;
+	width: 280px;
+	padding: 0.5em;
+	border: 5px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+#login_form input[type='submit'], #login_form a,
+#register_form input[type='submit'], #register_form a {
+	box-shadow: 0 1px 0 white;
+	-moz-box-shadow: 0 1px 0 white;
+	-webkit-box-shadow: 0 1px 0 white;
+	box-sizing: border-box;
+	border: none;
+	margin: 0 1em 0 0;
+	padding: 0.5em;
+	font-size: 1em;
+
+	background: #006DB8;
+	color: white;
+	cursor: pointer;
+	text-decoration: none;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+
+#login_form input[type='submit']:hover, #login_form a:hover,
+#register_form input[type='submit']:hover, #register_form a:hover {
+
+	background: #024E85;
+}
+
+#login_form .error {
+	color: #383838;
+	font-size: 1.2em;
+}
+
+fieldset {
+	margin: auto;
+	margin-bottom: 2em;
+	width: 300px%;
+	display: block;
+}
+
+#top_bar {
+	position: absolute;
+	width: 100%;
+	margin: 0;
+	padding: 0 4px;
+	-moz-box-shadow: 0 1px 0 #f0f0f0;
+	-webkit-box-shadow: 0 1px 0 #f0f0f0;	
+	background: white;
+	color: white;
+	height: 32px;
+	top: 0;
+}
