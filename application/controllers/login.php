@@ -21,7 +21,7 @@ class Login extends CI_Controller {
 			  'role' => $result->role
 			);
 			$this->session->set_userdata($data);
-			redirect('reports/view');
+			redirect('grid/view');
 		} else {
 			$this->index();
 		}

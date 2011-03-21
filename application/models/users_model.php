@@ -25,7 +25,7 @@ class Users_model extends CI_Model {
 	}
 
 	function list_all() {
-		$this->db->select('users.username, users.id,users.role_id, roles.role');
+		$this->db->select('users.username, users.id, users.role_id, roles.role');
 		$this->db->join('roles', 'roles.id = users.role_id');
 		return $this->db->get('users');
 	}
@@ -51,6 +51,7 @@ class Users_model extends CI_Model {
 	function remove_user() {
 		$id = $this->uri->segment(3);
 		$this->db->where('id', $id);
+		$this->db->delete('users');
 
 	}
 }

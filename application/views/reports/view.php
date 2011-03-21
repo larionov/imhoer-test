@@ -9,6 +9,10 @@ var base_url = "<?=site_url('reports/view')?>";
 $('select[name="report_id"]').change(function(){
 	document.location.href = [base_url, '/', $(this).val()].join('');
 });
+<?php if (!$current_report) : ?>
+$('select[name="report_id"]').change();
+<?php endif; ?>
+
 </script>
 
 <div  id='grid_view' class='grid_view'>

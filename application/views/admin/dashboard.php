@@ -57,4 +57,25 @@
 
 <div id='reports_list'  class='grid_view'>
 <h1>Reports</h1>
+	<table cellspacing='0' cellpadding='0' width='100%'>
+	<tr>
+		<th>Name</th>
+		<th>Is Extra</th>
+		<th></th>
+		<th></th>
+	</tr>
+
+	<?php foreach ($list_reports->result() as $report) : ?>
+	<?php
+	?>
+	<tr>
+		<td valign='top'><?=$report->title?></td>
+		<td valign='top'><?=$report->is_extra?></td>
+		<td valign='top'><?php echo anchor(array('admin','report_edit', $report->id), 'Edit'); ?></td>
+		<td valign='top'><?php echo anchor(array('admin','report_remove', $report->id), 'Remove'); ?></td>
+	</tr>
+
+	<?php endforeach;?>
+	</table>
+	<?php echo anchor(array('admin','report_edit'), 'Add'); ?>
 </div>
