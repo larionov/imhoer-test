@@ -1,8 +1,20 @@
-
 <?php
 
 class Grid extends CI_Controller {
+	function __construct() {
+		parent::__construct();
+
+		if (!is_logged_in()) {
+			redirect(site_url('login'));
+		}
+
+	}
+
 	function view() {		
+		$this->load->model('roles');
+		if (!$this->roles->can_view(get_role(), 'grid')) {
+			return access_denied();
+		}
 		$this->load->model('Data_grid');
 		$offset = $this->uri->segment(3);
 		if (!isset($offset)) {
@@ -11,6 +23,8 @@ class Grid extends CI_Controller {
 		$rows = $this->Data_grid->rows($offset);
 		$data['main_content'] = 'data/view';
 		$data['rows'] = $rows;
+		$data['can_edit'] = $this->roles->can_edit(get_role(), 'grid');
+		$data['can_extra'] = $this->roles->can_extra(get_role(), 'grid');
 		$data['num_rows'] = $this->Data_grid->num_rows();
 		$data['grid_fields'] = $this->Data_grid->fields();
 		$this->load->view('includes/template', $data);
@@ -19,6 +33,11 @@ class Grid extends CI_Controller {
 	}
 
 	function edit() {
+		$this->load->model('roles');
+		if (!$this->roles->can_view(get_role(), 'grid')) {
+			return access_denied();
+		}
+
 		$this->load->model('Data_grid');
 
 		$data['main_content'] = 'data/edit';
@@ -29,6 +48,11 @@ class Grid extends CI_Controller {
 	}
 
 	function save_row() {
+		$this->load->model('roles');
+		if (!$this->roles->can_view(get_role(), 'grid')) {
+			return access_denied();
+		}
+
 		$this->load->library('form_validation');
 		$this->load->model('Data_grid');
 		$data['grid_fields'] = $this->Data_grid->fields();

@@ -7,26 +7,26 @@ body {
 
 #login_form {
 	-webkit-user-select: none;
-	-moz-user-select: none;
+	-moz-user-select: -moz-none;
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 
 	background: #f0f0f0;
-	margin: 250px auto 0;
+	margin: 200px auto 0;
 	padding: 1em;
 	width: 300px;
 
 }
 #register_form {
 	-webkit-user-select: none;
-	-moz-user-select: none;
+	-moz-user-select: -moz-none;
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 
 	background: #f0f0f0;
-	margin: 250px auto 0;
+	margin: 200px auto 0;
 	padding: 1em;
 	width: 350px;
 
@@ -41,11 +41,14 @@ h1,h2 {
 
 #login_form input[type='text'], #login_form input[type='password'],
 #register_form input[type='text'], #register_form input[type='password'] {
+	-webkit-user-select: text;
+	-moz-user-select: text;
 	display: block;
 	margin: 0 0 1em 0;
 	width: 280px;
 	padding: 0.5em;
-	border: 5px;
+	border: 5px solid #dcdcdc;
+
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 }
@@ -53,9 +56,10 @@ h1,h2 {
 #grid_entry input[type='submit'], #grid_entry a,
 #login_form input[type='submit'], #login_form a,
 #register_form input[type='submit'], #register_form a {
-	box-shadow: 0 1px 0 #1d1212;
-	-moz-box-shadow: 0 1px 0 #1d1212;
-	-webkit-box-shadow: 0 1px 0 #1d1212;
+	text-shadow: 0 1px 0 #1d1212;
+	-moz-text-shadow: 0 1px 0 #1d1212;
+	-webkit-text-shadow: 0 1px 0 #1d1212;
+
 	box-sizing: border-box;
 	border: none;
 	margin: 0 1em 0 0;
@@ -89,6 +93,30 @@ fieldset {
 	width: 300px%;
 	display: block;
 }
+
+#top_bar a {
+	font-weight: bold;
+	text-shadow: 0 1px 0 #1d1212;
+	-moz-text-shadow: 0 1px 0 #1d1212;
+	-webkit-text-shadow: 0 1px 0 #1d1212;
+	box-sizing: border-box;
+	border: none;
+	margin: 0 0 0 0.1em;
+	padding: 0.5em;
+	font-size: 1em;
+
+	background: #006db8;
+	color: white;
+	cursor: pointer;
+	text-decoration: none;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+}
+#top_bar a:hover {
+	background: #024E85;
+}
+
 
 #top_bar {
 	-webkit-user-select: none;
@@ -149,16 +177,16 @@ fieldset {
 }
 
 
-#grid_view {
+.grid_view {
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 
 	background: #f0f0f0;
-	margin: 0 1em;
+	margin: 1em 1em;
 	padding: 1em;
 }
-#grid_view th {	
+.grid_view th {	
 	text-shadow: 0 1px 0 white;
 	-moz-text-shadow: 0 1px 0 white;
 	-webkit-text-shadow: 0 1px 0 white;
@@ -167,10 +195,81 @@ fieldset {
 	font-size: 1.1em;
 	padding:5px;
 }
-#grid_view td {
+.grid_view td {
 	font-size: 0.7em;
-	background: f0f0f0;
+	background: #f0f0f0;
 	color: #1D1212;
 	padding:3px;
 	border-bottom: 1px solid white;
+}
+
+.grid_view tr.hover td {
+	background: white;
+}
+
+.noselect {
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+#userinfo {
+	color: white;
+}
+
+#access_denied {
+	-webkit-user-select: none;
+	-moz-user-select: -moz-none;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+
+	background: #f0f0f0;
+	margin: 200px auto 0;
+	padding: 1em;
+	width: 300px;
+	text-align: center;
+}
+
+#users_list {
+	-webkit-user-select: none;
+	-moz-user-select: -moz-none;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+
+	background: #f0f0f0;
+	margin: 1em;
+	padding: 1em;
+	width: 500px;
+	float: left;
+}
+
+
+#reports_list {
+	-webkit-user-select: none;
+	-moz-user-select: -moz-none;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+
+	background: #f0f0f0;
+	margin: 1em;
+	padding: 1em;
+	width: 500px;
+	float: left;
+}
+
+#roles_list {
+	-webkit-user-select: none;
+	-moz-user-select: -moz-none;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+
+	background: #f0f0f0;
+	margin: 1em;
+	padding: 1em;
+	width: 500px;
+	float: left;
 }

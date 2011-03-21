@@ -1,22 +1,32 @@
 <?php
 	function is_logged_in() {
-		
-		$is_logged_in = $CI->session->user_data('is_logged_in');
+		$CI =& get_instance();
+
+		$is_logged_in = $CI->session->userdata('is_logged_in');
 		return (isset($is_logged_in) && $is_logged_in == true);
 	}
 
-	function can_read($page) {
-		$CI = get_instance();
-		$level = $CI->session->user_data('level');
+	function get_role() {
+		$CI =& get_instance();
+
+		if (is_logged_in() && $role = $CI->session->userdata('role')) {
+			return $role;
+		}
+		return false;
 	}
 
-	function can_write($page) {
-		$CI = get_instance();
-		
+	function get_username() {
+		$CI =& get_instance();
+		if (is_logged_in() && $role = $CI->session->userdata('username')) {
+			return $role;
+		}
+		return false;
 	}
 
-	function can_extra($page) {
-		$CI = get_instance();
-		
+	function access_denied() {
+		$CI =& get_instance();
+		$data['main_content'] = 'access_denied';
+		$CI->load->view('includes/template', $data);
 	}
+
 ?>

@@ -6,15 +6,20 @@ class Login extends CI_Controller {
 		$this->load->view('includes/template', $data);
 	}
 
+	function logout() {
+		$this->session->sess_destroy();
+		redirect('login');
+	}
 	function process_login() {
 		$this->load->model('users_model');
 		$result = $this->users_model->validate();
-		if ($result) { // Auth succeeded
+		if ($result !== false) { // Auth succeeded
 			$data = Array (
 			  'username' => $this->input->post('username'),
-			  'is_logged_in' => true
+			  'is_logged_in' => true,
+			  'role_id' => $result->role_id,
+			  'role' => $result->role
 			);
-
 			$this->session->set_userdata($data);
 			redirect('reports/view');
 		} else {
