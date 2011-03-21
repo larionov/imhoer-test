@@ -15,5 +15,14 @@
 
 <body>
 <div id='top_bar'>
-	<a href='/'><img src="<?php echo base_url(); ?>/pics/imhoer.png" height="24px" style='margin-top:6px;' border="0"/></a>
+	<a href='<?=site_url("grid/view");?>'>Data entry</a>
+	<a href='<?=site_url("reports/view");?>'>Reports</a>
+	<a href='<?=site_url("admin");?>'>Administration</a>
+	<div id='top_right'>
+		<?php if (isset($user_data)): ?>
+			<a href='<?=site_url("login/logout");?>'>Logout</a>
+		<?php else: ?>
+			<a href='<?=site_url("login");?>'>Login</a>
+		<?php endif; ?>
+	</div>
 </div>
