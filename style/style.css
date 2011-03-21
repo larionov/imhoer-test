@@ -273,3 +273,17 @@ fieldset {
 	width: 500px;
 	float: left;
 }
+
+select[name="report_id"] {
+	font-size: 1.5em;
+	width: 400px;
+	margin: 0.5em 1em 0;
+}
+
+a {
+	color: #1d1212;
+	font-weight: bold;
+}
+a:hover {
+	color: #006db8;
+}

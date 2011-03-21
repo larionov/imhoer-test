@@ -26,7 +26,7 @@ $config['base_url']	= 'http://ec2-184-72-150-133.compute-1.amazonaws.com/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
