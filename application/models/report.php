@@ -16,7 +16,7 @@ class Report extends CI_Model {
 	function list_all($extra = false) {
 		if (!$extra) {
 			$this->db->where('is_extra', false);
-		}
+		} 
 		return $this->db->get('reports');
 	}
 
